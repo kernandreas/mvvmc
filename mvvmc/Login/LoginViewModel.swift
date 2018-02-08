@@ -7,4 +7,15 @@
 
 import Foundation
 
-class LoginViewModel {}
+class LoginViewModel {
+
+    private let authenticationService: AuthenticationService
+
+    init(authenticationService: AuthenticationService) {
+        self.authenticationService = authenticationService
+    }
+
+    func authenticate(username: String, password: String, result: (Bool) -> ()) {
+        authenticationService.authenticate(username: username, password: password, result: result)
+    }
+}

@@ -7,10 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1A19D318011407974120B9F7 /* AuthenticationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A19D57D59B0F39A247D19D6 /* AuthenticationService.swift */; };
 		A3A794D7202CE2F50039FB0B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3A794D6202CE2F50039FB0B /* AppDelegate.swift */; };
 		A3A794DE202CE2F50039FB0B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A3A794DD202CE2F50039FB0B /* Assets.xcassets */; };
 		A3A794E1202CE2F50039FB0B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A3A794DF202CE2F50039FB0B /* LaunchScreen.storyboard */; };
-		A3A794EC202CE2F60039FB0B /* mvvmcTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3A794EB202CE2F60039FB0B /* mvvmcTests.swift */; };
+		A3A794EC202CE2F60039FB0B /* AuthenticationServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3A794EB202CE2F60039FB0B /* AuthenticationServiceTests.swift */; };
 		A3A794F7202CE2F60039FB0B /* mvvmcUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3A794F6202CE2F60039FB0B /* mvvmcUITests.swift */; };
 		A3A79506202CE9640039FB0B /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3A79505202CE9640039FB0B /* LoginViewController.swift */; };
 		A3A79508202CE9850039FB0B /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3A79507202CE9850039FB0B /* LoginViewModel.swift */; };
@@ -34,13 +35,14 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1A19D57D59B0F39A247D19D6 /* AuthenticationService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthenticationService.swift; sourceTree = "<group>"; };
 		A3A794D3202CE2F50039FB0B /* mvvmc.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = mvvmc.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A3A794D6202CE2F50039FB0B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A3A794DD202CE2F50039FB0B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A3A794E0202CE2F50039FB0B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A3A794E2202CE2F50039FB0B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A3A794E7202CE2F60039FB0B /* mvvmcTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = mvvmcTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		A3A794EB202CE2F60039FB0B /* mvvmcTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = mvvmcTests.swift; sourceTree = "<group>"; };
+		A3A794EB202CE2F60039FB0B /* AuthenticationServiceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationServiceTests.swift; sourceTree = "<group>"; };
 		A3A794ED202CE2F60039FB0B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A3A794F2202CE2F60039FB0B /* mvvmcUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = mvvmcUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A3A794F6202CE2F60039FB0B /* mvvmcUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = mvvmcUITests.swift; sourceTree = "<group>"; };
@@ -98,6 +100,7 @@
 			isa = PBXGroup;
 			children = (
 				A3A794D6202CE2F50039FB0B /* AppDelegate.swift */,
+				1A19D57D59B0F39A247D19D6 /* AuthenticationService.swift */,
 				A3A79504202CE93D0039FB0B /* Login */,
 				A3A794DD202CE2F50039FB0B /* Assets.xcassets */,
 				A3A794DF202CE2F50039FB0B /* LaunchScreen.storyboard */,
@@ -109,7 +112,7 @@
 		A3A794EA202CE2F60039FB0B /* mvvmcTests */ = {
 			isa = PBXGroup;
 			children = (
-				A3A794EB202CE2F60039FB0B /* mvvmcTests.swift */,
+				A3A794EB202CE2F60039FB0B /* AuthenticationServiceTests.swift */,
 				A3A794ED202CE2F60039FB0B /* Info.plist */,
 			);
 			path = mvvmcTests;
@@ -268,6 +271,7 @@
 				A3A79506202CE9640039FB0B /* LoginViewController.swift in Sources */,
 				A3A794D7202CE2F50039FB0B /* AppDelegate.swift in Sources */,
 				A3A79508202CE9850039FB0B /* LoginViewModel.swift in Sources */,
+				1A19D318011407974120B9F7 /* AuthenticationService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -275,7 +279,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A3A794EC202CE2F60039FB0B /* mvvmcTests.swift in Sources */,
+				A3A794EC202CE2F60039FB0B /* AuthenticationServiceTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

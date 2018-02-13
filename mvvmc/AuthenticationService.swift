@@ -14,13 +14,7 @@ class BackendAuthenticationService: AuthenticationService {
     var isLoggedIn = false
 
     func authenticate(username: String, password: String, result: (Bool) -> ()) {
-        // In a real application we would make a call to the backend
-        let valid = [("userA", "passwordA"), ("userB", "passwordB")]
-        let isValid = valid.contains { (candidate) -> Bool in
-            return candidate.0 == username && candidate.1 == password
-        }
-
-        isLoggedIn = isValid
-        result(isValid)
+        isLoggedIn = true
+        result(true)
     }
 }

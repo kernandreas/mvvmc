@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		1A19D318011407974120B9F7 /* AuthenticationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A19D57D59B0F39A247D19D6 /* AuthenticationService.swift */; };
+		A379B32F202D0442001B5648 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A379B32E202D0442001B5648 /* Coordinator.swift */; };
 		A379B3312030ACAC001B5648 /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A379B3302030ACAC001B5648 /* AppCoordinator.swift */; };
 		A3A5B5CE2032D809002D33D1 /* Services.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3A5B5CD2032D809002D33D1 /* Services.swift */; };
 		A3A794D7202CE2F50039FB0B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3A794D6202CE2F50039FB0B /* AppDelegate.swift */; };
@@ -38,6 +39,7 @@
 
 /* Begin PBXFileReference section */
 		1A19D57D59B0F39A247D19D6 /* AuthenticationService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthenticationService.swift; sourceTree = "<group>"; };
+		A379B32E202D0442001B5648 /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
 		A379B3302030ACAC001B5648 /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
 		A3A5B5CD2032D809002D33D1 /* Services.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Services.swift; sourceTree = "<group>"; };
 		A3A794D3202CE2F50039FB0B /* mvvmc.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = mvvmc.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -106,6 +108,7 @@
 				A3A794D6202CE2F50039FB0B /* AppDelegate.swift */,
 				A3A5B5CD2032D809002D33D1 /* Services.swift */,
 				1A19D57D59B0F39A247D19D6 /* AuthenticationService.swift */,
+				A379B32E202D0442001B5648 /* Coordinator.swift */,
 				A379B3302030ACAC001B5648 /* AppCoordinator.swift */,
 				A3A79504202CE93D0039FB0B /* Login */,
 				A3A794DD202CE2F50039FB0B /* Assets.xcassets */,
@@ -278,6 +281,7 @@
 				A3A79506202CE9640039FB0B /* LoginViewController.swift in Sources */,
 				A3A794D7202CE2F50039FB0B /* AppDelegate.swift in Sources */,
 				A3A5B5CE2032D809002D33D1 /* Services.swift in Sources */,
+				A379B32F202D0442001B5648 /* Coordinator.swift in Sources */,
 				A3A79508202CE9850039FB0B /* LoginViewModel.swift in Sources */,
 				1A19D318011407974120B9F7 /* AuthenticationService.swift in Sources */,
 			);

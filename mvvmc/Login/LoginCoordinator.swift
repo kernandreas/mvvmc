@@ -33,8 +33,4 @@ class LoginCoordinator: Coordinator {
         dismiss()
         delegate?.loginCoordinatorDidLogin(coordinator: self)
     }
-
-    deinit {
-        print("deninit \(self)")
-    }
 }

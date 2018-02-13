@@ -13,14 +13,17 @@ protocol Coordinator: class {
 
     associatedtype ViewController: UIViewController
 
-    var viewController: ViewController { get }
+    var viewController: ViewController? { get set }
     var root: UIViewController { get }
-}
 
+    func createViewController() -> ViewController
+}
 
 extension Coordinator {
 
     func show() {
+        let viewController = createViewController()
+        self.viewController = viewController
         root.show(viewController, sender: self)
     }
 

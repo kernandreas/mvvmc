@@ -21,22 +21,35 @@ class AppCoordinator: Coordinator {
 
     func createViewController() -> UIViewController {
         if services.authentification.isLoggedIn {
-            let tabBarController = UITabBarController()
-            return tabBarController
+            return createTabbarController()
         } else {
-            let navigationController = UINavigationController()
-            let coordinator = LoginCoordinator(root: navigationController, services: services)
-            coordinator.delegate = self
-            coordinator.show()
-
-            return navigationController
+            return createLoginViewController()
         }
     }
 
-    func show() {
-        viewController = createViewController()
-        window.rootViewController = viewController
+    func createLoginViewController() -> UIViewController {
+        let navigationController = UINavigationController()
+        let coordinator = LoginCoordinator(root: navigationController, services: services)
+        coordinator.delegate = self
+        coordinator.show()
 
+        return navigationController
+    }
+
+    func createTabbarController() -> UITabBarController {
+        let tabBarController = UITabBarController()
+
+        let firstNavigationController = UINavigationController()
+        let firstCoordinator = FirstCoordinator(root: firstNavigationController)
+        firstCoordinator.show()
+
+        tabBarController.viewControllers = [firstNavigationController]
+
+        return tabBarController
+    }
+
+    func show() {
+        window.rootViewController = createViewController()
         if !window.isKeyWindow {
             window.makeKeyAndVisible()
         }

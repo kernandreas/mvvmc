@@ -9,8 +9,8 @@ import UIKit
 
 class LoginCoordinator: Coordinator {
 
-    var viewController: LoginViewController?
-    let root: UIViewController
+    weak var viewController: LoginViewController?
+    weak var root: UIViewController?
 
     let services: Services
 

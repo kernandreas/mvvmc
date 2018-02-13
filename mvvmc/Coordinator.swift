@@ -13,8 +13,8 @@ protocol Coordinator: class {
 
     associatedtype ViewController: UIViewController
 
-    var viewController: ViewController? { get set }
-    var root: UIViewController { get }
+    weak var viewController: ViewController? { get set }
+    weak var root: UIViewController? { get set }
 
     func createViewController() -> ViewController
 }
@@ -24,10 +24,10 @@ extension Coordinator {
     func show() {
         let viewController = createViewController()
         self.viewController = viewController
-        root.show(viewController, sender: self)
+        root?.show(viewController, sender: self)
     }
 
     func dismiss() {
-        root.dismiss(animated: true, completion: nil)
+        root?.dismiss(animated: true, completion: nil)
     }
 }

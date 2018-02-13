@@ -26,9 +26,19 @@ class AppCoordinator {
             window.rootViewController = navigationController
 
             let coordinator = LoginCoordinator(root: navigationController, services: services)
+            coordinator.delegate = self
             coordinator.show()
         }
 
         window.makeKeyAndVisible()
+    }
+}
+
+extension AppCoordinator: LoginCoordinatorDelegate {
+
+    func loginCoordinatorDidLogin(coordinator: LoginCoordinator) {
+        UIView.animate(withDuration: 0.25) { [weak self] in
+            self?.start()
+        }
     }
 }

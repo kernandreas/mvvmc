@@ -18,8 +18,8 @@ class LoginViewModel {
     }
 
     func authenticate() {
-        services.authentification.authenticate(username: "Test", password: "A") { result in
-            print(result)
+        services.authentification.authenticate(username: "Test", password: "A") { [weak self] result in
+            self?.coordinator.showAfterLogin()
         }
     }
 }

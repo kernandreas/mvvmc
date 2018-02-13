@@ -19,7 +19,7 @@ class AppCoordinator: Coordinator {
         self.services = services
     }
 
-    func createViewController() -> UIViewController {
+    func createViewController() -> UIViewController? {
         if services.authentification.isLoggedIn {
             return createTabbarController()
         } else {

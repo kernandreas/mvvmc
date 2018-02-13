@@ -16,7 +16,7 @@ class FirstCoordinator: Coordinator {
         self.root = root
     }
 
-    func createViewController() -> FirstViewController {
+    func createViewController() -> FirstViewController? {
         let viewModel = FirstViewModel(coordinator: self)
         return FirstViewController(viewModel: viewModel)
     }

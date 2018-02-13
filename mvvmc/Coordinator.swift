@@ -16,13 +16,13 @@ protocol Coordinator: class {
     weak var viewController: ViewController? { get set }
     weak var root: UIViewController? { get set }
 
-    func createViewController() -> ViewController
+    func createViewController() -> ViewController?
 }
 
 extension Coordinator {
 
     func show() {
-        let viewController = createViewController()
+        guard let viewController = createViewController() else { return }
         self.viewController = viewController
         root?.show(viewController, sender: self)
     }

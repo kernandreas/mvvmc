@@ -24,7 +24,7 @@ class LoginCoordinator: Coordinator {
         self.services = services
     }
 
-    func createViewController() -> LoginViewController {
+    func createViewController() -> LoginViewController? {
         let viewModel = LoginViewModel(coordinator: self, services: services)
         return LoginViewController(viewModel: viewModel)
     }

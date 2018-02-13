@@ -57,7 +57,12 @@ class AppCoordinator: Coordinator {
     }
 
     func show() {
-        window.rootViewController = createViewController()
+        let vc = createViewController()
+        vc?.view.frame = window.bounds
+        UIView.animate(withDuration: 0.3, animations: { [unowned self] in
+            self.window.rootViewController = vc
+        })
+
         if !window.isKeyWindow {
             window.makeKeyAndVisible()
         }
@@ -71,8 +76,6 @@ class AppCoordinator: Coordinator {
 extension AppCoordinator: LoginCoordinatorDelegate {
 
     func loginCoordinatorDidLogin(coordinator: LoginCoordinator) {
-        UIView.animate(withDuration: 0.25) { [weak self] in
-            self?.show()
-        }
+        show()
     }
 }

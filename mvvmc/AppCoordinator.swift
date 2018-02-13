@@ -7,30 +7,43 @@
 
 import UIKit
 
-class AppCoordinator {
+class AppCoordinator: Coordinator {
+
+    weak var viewController: UIViewController?
+    weak var root: UIViewController?
 
     private let services: Services
     private let window: UIWindow = UIWindow()
-    private lazy var tabBarController = UITabBarController()
 
     init(services: Services) {
         self.services = services
     }
 
-    func start() {
-
+    func createViewController() -> UIViewController {
         if services.authentification.isLoggedIn {
-            window.rootViewController = tabBarController
+            let tabBarController = UITabBarController()
+            return tabBarController
         } else {
             let navigationController = UINavigationController()
-            window.rootViewController = navigationController
-
             let coordinator = LoginCoordinator(root: navigationController, services: services)
             coordinator.delegate = self
             coordinator.show()
-        }
 
-        window.makeKeyAndVisible()
+            return navigationController
+        }
+    }
+
+    func show() {
+        viewController = createViewController()
+        window.rootViewController = viewController
+
+        if !window.isKeyWindow {
+            window.makeKeyAndVisible()
+        }
+    }
+
+    func dismiss() {
+        window.rootViewController = nil
     }
 }
 
@@ -38,7 +51,7 @@ extension AppCoordinator: LoginCoordinatorDelegate {
 
     func loginCoordinatorDidLogin(coordinator: LoginCoordinator) {
         UIView.animate(withDuration: 0.25) { [weak self] in
-            self?.start()
+            self?.show()
         }
     }
 }

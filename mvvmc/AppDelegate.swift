@@ -18,7 +18,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         services = AppServices()
 
         appCoordinator = AppCoordinator(services: services)
-        appCoordinator.start()
+        appCoordinator.show()
 
         return true
     }

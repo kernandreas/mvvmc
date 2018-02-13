@@ -15,6 +15,10 @@
 		A3A5B5D320334172002D33D1 /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3A5B5D220334172002D33D1 /* FirstViewController.swift */; };
 		A3A5B5D5203341A6002D33D1 /* FirstViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3A5B5D4203341A6002D33D1 /* FirstViewModel.swift */; };
 		A3A5B5D72033420E002D33D1 /* FirstCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3A5B5D62033420E002D33D1 /* FirstCoordinator.swift */; };
+		A3A5B5DA20337CD0002D33D1 /* SecondStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A3A5B5D920337CD0002D33D1 /* SecondStoryboard.storyboard */; };
+		A3A5B5DC20337CF5002D33D1 /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3A5B5DB20337CF5002D33D1 /* SecondViewController.swift */; };
+		A3A5B5DE20337D35002D33D1 /* SecondViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3A5B5DD20337D35002D33D1 /* SecondViewModel.swift */; };
+		A3A5B5E020337D4A002D33D1 /* SecondCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3A5B5DF20337D4A002D33D1 /* SecondCoordinator.swift */; };
 		A3A794D7202CE2F50039FB0B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3A794D6202CE2F50039FB0B /* AppDelegate.swift */; };
 		A3A794DE202CE2F50039FB0B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A3A794DD202CE2F50039FB0B /* Assets.xcassets */; };
 		A3A794E1202CE2F50039FB0B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A3A794DF202CE2F50039FB0B /* LaunchScreen.storyboard */; };
@@ -50,6 +54,10 @@
 		A3A5B5D220334172002D33D1 /* FirstViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstViewController.swift; sourceTree = "<group>"; };
 		A3A5B5D4203341A6002D33D1 /* FirstViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstViewModel.swift; sourceTree = "<group>"; };
 		A3A5B5D62033420E002D33D1 /* FirstCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstCoordinator.swift; sourceTree = "<group>"; };
+		A3A5B5D920337CD0002D33D1 /* SecondStoryboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SecondStoryboard.storyboard; sourceTree = "<group>"; };
+		A3A5B5DB20337CF5002D33D1 /* SecondViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondViewController.swift; sourceTree = "<group>"; };
+		A3A5B5DD20337D35002D33D1 /* SecondViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondViewModel.swift; sourceTree = "<group>"; };
+		A3A5B5DF20337D4A002D33D1 /* SecondCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondCoordinator.swift; sourceTree = "<group>"; };
 		A3A794D3202CE2F50039FB0B /* mvvmc.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = mvvmc.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A3A794D6202CE2F50039FB0B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A3A794DD202CE2F50039FB0B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -100,6 +108,17 @@
 			path = First;
 			sourceTree = "<group>";
 		};
+		A3A5B5D820337C67002D33D1 /* Second */ = {
+			isa = PBXGroup;
+			children = (
+				A3A5B5D920337CD0002D33D1 /* SecondStoryboard.storyboard */,
+				A3A5B5DB20337CF5002D33D1 /* SecondViewController.swift */,
+				A3A5B5DD20337D35002D33D1 /* SecondViewModel.swift */,
+				A3A5B5DF20337D4A002D33D1 /* SecondCoordinator.swift */,
+			);
+			path = Second;
+			sourceTree = "<group>";
+		};
 		A3A794CA202CE2F50039FB0B = {
 			isa = PBXGroup;
 			children = (
@@ -130,6 +149,7 @@
 				A379B3302030ACAC001B5648 /* AppCoordinator.swift */,
 				A3A79504202CE93D0039FB0B /* Login */,
 				A3A5B5D12033415A002D33D1 /* First */,
+				A3A5B5D820337C67002D33D1 /* Second */,
 				A3A794DD202CE2F50039FB0B /* Assets.xcassets */,
 				A3A794DF202CE2F50039FB0B /* LaunchScreen.storyboard */,
 				A3A794E2202CE2F50039FB0B /* Info.plist */,
@@ -272,6 +292,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A3A794E1202CE2F50039FB0B /* LaunchScreen.storyboard in Resources */,
+				A3A5B5DA20337CD0002D33D1 /* SecondStoryboard.storyboard in Resources */,
 				A3A794DE202CE2F50039FB0B /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -297,11 +318,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A3A5B5DC20337CF5002D33D1 /* SecondViewController.swift in Sources */,
 				A3A5B5D320334172002D33D1 /* FirstViewController.swift in Sources */,
 				A3A5B5D5203341A6002D33D1 /* FirstViewModel.swift in Sources */,
 				A379B3312030ACAC001B5648 /* AppCoordinator.swift in Sources */,
+				A3A5B5E020337D4A002D33D1 /* SecondCoordinator.swift in Sources */,
 				A3A79506202CE9640039FB0B /* LoginViewController.swift in Sources */,
 				A3A5B5D72033420E002D33D1 /* FirstCoordinator.swift in Sources */,
+				A3A5B5DE20337D35002D33D1 /* SecondViewModel.swift in Sources */,
 				A3A794D7202CE2F50039FB0B /* AppDelegate.swift in Sources */,
 				A3A5B5CE2032D809002D33D1 /* Services.swift in Sources */,
 				A379B32F202D0442001B5648 /* Coordinator.swift in Sources */,

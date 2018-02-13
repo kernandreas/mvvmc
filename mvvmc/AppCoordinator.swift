@@ -41,9 +41,17 @@ class AppCoordinator: Coordinator {
 
         let firstNavigationController = UINavigationController()
         let firstCoordinator = FirstCoordinator(root: firstNavigationController)
-        firstCoordinator.show()
 
-        tabBarController.viewControllers = [firstNavigationController]
+        let secondNavigationController = UINavigationController()
+        let secondCoordinator = SecondCoordinator(root: secondNavigationController)
+
+        tabBarController.viewControllers = [
+            firstNavigationController,
+            secondNavigationController
+        ]
+
+        firstCoordinator.show()
+        secondCoordinator.show()
 
         return tabBarController
     }

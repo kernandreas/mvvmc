@@ -17,7 +17,9 @@ class LoginViewModel {
         self.services = services
     }
 
-    func authenticate(username: String, password: String, result: (Bool) -> ()) {
-        services.authentification.authenticate(username: username, password: password, result: result)
+    func authenticate() {
+        services.authentification.authenticate(username: "Test", password: "A") { result in
+            print(result)
+        }
     }
 }

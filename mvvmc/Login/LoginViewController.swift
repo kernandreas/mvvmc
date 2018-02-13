@@ -23,6 +23,21 @@ class LoginViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        view.backgroundColor = .green
+        view.backgroundColor = .white
+
+        let button = UIButton(type: .roundedRect)
+        button.setTitle("Login", for: .normal)
+        button.addTarget(self, action: #selector(didTapLogin), for: .touchUpInside)
+        button.translatesAutoresizingMaskIntoConstraints = false
+        
+        view.addSubview(button)
+        NSLayoutConstraint.activate([
+            button.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            button.centerYAnchor.constraint(equalTo: view.centerYAnchor)
+            ])
+    }
+
+    @objc func didTapLogin() {
+        viewModel.authenticate()
     }
 }

@@ -22,9 +22,11 @@ class AppCoordinator {
         if services.authentification.isLoggedIn {
             window.rootViewController = tabBarController
         } else {
-            let loginViewModel = LoginViewModel(authenticationService: services.authentification)
-            let loginViewController = LoginViewController(viewModel: loginViewModel)
-            window.rootViewController = loginViewController
+            let navigationController = UINavigationController()
+            window.rootViewController = navigationController
+
+            let coordinator = LoginCoordinator(root: navigationController, services: services)
+            coordinator.show()
         }
 
         window.makeKeyAndVisible()

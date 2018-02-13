@@ -10,16 +10,15 @@ import UIKit
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
-    let window = UIWindow()
-
+    var appCoordinator: AppCoordinator!
+    var services: AppServices!
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
 
-        let rootVC = UIViewController()
-        rootVC.view.backgroundColor = .green
-        window.rootViewController = rootVC
+        services = AppServices()
 
-        window.makeKeyAndVisible()
+        appCoordinator = AppCoordinator(services: services)
+        appCoordinator.start()
 
         return true
     }

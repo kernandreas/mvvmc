@@ -9,13 +9,15 @@ import Foundation
 
 class LoginViewModel {
 
-    private let authenticationService: AuthenticationService
+    private let coordinator: LoginCoordinator
+    private let services: Services
 
-    init(authenticationService: AuthenticationService) {
-        self.authenticationService = authenticationService
+    init(coordinator: LoginCoordinator, services: Services) {
+        self.coordinator = coordinator
+        self.services = services
     }
 
     func authenticate(username: String, password: String, result: (Bool) -> ()) {
-        authenticationService.authenticate(username: username, password: password, result: result)
+        services.authentification.authenticate(username: username, password: password, result: result)
     }
 }

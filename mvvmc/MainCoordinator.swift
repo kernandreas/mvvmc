@@ -15,7 +15,7 @@ class MainCoordinator: Coordinator {
         self.window = window
     }
 
-    override func start() {
+    func start() {
         let tabBarController = UITabBarController()
         coordinate(to: FirstCoordinator(tabBarController: tabBarController))
         coordinate(to: SecondCoordinator(tabBarController: tabBarController))

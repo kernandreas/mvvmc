@@ -15,7 +15,7 @@ class SecondCoordinator: Coordinator {
         self.tabBarController = tabBarController
     }
 
-    override func start() {
+    func start() {
         let viewModel = SecondViewModel()
         guard let viewController = UIStoryboard(name: "SecondStoryboard", bundle: nil).instantiateInitialViewController() as? SecondViewController else {
             return

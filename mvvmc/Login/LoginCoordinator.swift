@@ -7,4 +7,6 @@
 
 import UIKit
 
-class LoginCoordinator: Coordinator {}
+class LoginCoordinator: Coordinator {
+    func start() {}
+}

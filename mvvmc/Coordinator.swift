@@ -7,31 +7,27 @@
 
 import UIKit
 
-class Coordinator {
+class BaseCoordinator {
 
     private let identifier = UUID()
-    private var childCoordinators = [Coordinator]()
+    private var childCoordinators = [UUID: Coordinator]()
 
     private func addChild(_ child: Coordinator) {
-        childCoordinators.append(child)
+        childCoordinators[child.identifier] = child
     }
 
     private func removeChild(_ child: Coordinator) {
-        childCoordinators = childCoordinators.filter { $0 != child }
+        childCoordinators[child.identifier] = nil
     }
 
     func coordinate(to coordinator: Coordinator) {
         addChild(coordinator)
         coordinator.start()
     }
-
-    func start() {
-        fatalError("Implement in subclass")
-    }
 }
 
-extension Coordinator: Equatable {
-    static func ==(rhs: Coordinator, lhs: Coordinator) -> Bool {
-        return rhs.identifier == lhs.identifier
-    }
+protocol Coordinating {
+    func start()
 }
+
+typealias Coordinator = BaseCoordinator & Coordinating

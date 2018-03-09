@@ -15,7 +15,7 @@ class AppCoordinator: Coordinator {
         self.window = window
     }
 
-    override func start() {
+    func start() {
         coordinate(to: MainCoordinator(window: window))
         window.makeKeyAndVisible()
     }

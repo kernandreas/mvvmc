@@ -15,7 +15,7 @@ class FirstCoordinator: Coordinator {
         self.tabBarController = tabBarController
     }
 
-    override func start() {
+    func start() {
         let viewModel = FirstViewModel()
         let viewController = FirstViewController(viewModel: viewModel)
         let navigationController = UINavigationController(rootViewController: viewController)

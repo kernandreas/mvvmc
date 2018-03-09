@@ -10,16 +10,10 @@ import UIKit
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
-    var appCoordinator: AppCoordinator!
-    var services: AppServices!
+    lazy var appCoordinator = AppCoordinator()
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
-
-        services = AppServices()
-
-        appCoordinator = AppCoordinator(presentingViewController: nil, inject: services)
-        appCoordinator.show()
-
+        appCoordinator.start()
         return true
     }
 

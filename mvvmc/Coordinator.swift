@@ -7,45 +7,31 @@
 
 import UIKit
 
-// This implementation is inspired by https://github.com/nvh/Coordinating-presentation and https://github.com/wtsnz/Coordinator-Example
+class Coordinator {
 
-protocol Dependencies {}
+    private let identifier = UUID()
+    private var childCoordinators = [Coordinator]()
 
-protocol Coordinator: class {
+    private func addChild(_ child: Coordinator) {
+        childCoordinators.append(child)
+    }
 
-    associatedtype ViewController: UIViewController
-    associatedtype CoordinatorDependencies
+    private func removeChild(_ child: Coordinator) {
+        childCoordinators = childCoordinators.filter { $0 != child }
+    }
 
-    var dependencies: CoordinatorDependencies { get set }
-    var coordinatedViewController: ViewController? { get set }
-    var presentingViewController: UIViewController? { get set }
+    func coordinate(to coordinator: Coordinator) {
+        addChild(coordinator)
+        start()
+    }
 
-    init(presentingViewController: UIViewController?, inject: CoordinatorDependencies)
-
-    func createViewController() -> ViewController?
-
-    func transition<C>(to coordinator: C.Type, _ inject: C.CoordinatorDependencies, _ applyToInstance: ((C) -> Void)?) where C : Coordinator
-
-    func show()
-    func dismiss()
+    func start() {
+        fatalError("Implement in subclass")
+    }
 }
 
-extension Coordinator {
-
-    func transition<C>(to coordinator: C.Type, _ inject: C.CoordinatorDependencies, _ applyToInstance: ((C) -> Void)? = nil) where C : Coordinator  {
-        let instance = C.init(presentingViewController: coordinatedViewController, inject: inject)
-        instance.show()
-
-        applyToInstance?(instance)
-    }
-
-    func show() {
-        guard let viewController = createViewController() else { return }
-        self.coordinatedViewController = viewController
-        presentingViewController?.show(viewController, sender: self)
-    }
-
-    func dismiss() {
-        presentingViewController?.dismiss(animated: true, completion: nil)
+extension Coordinator: Equatable {
+    static func ==(rhs: Coordinator, lhs: Coordinator) -> Bool {
+        return rhs.identifier == lhs.identifier
     }
 }

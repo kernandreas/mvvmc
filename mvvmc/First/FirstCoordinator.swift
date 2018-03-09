@@ -7,13 +7,16 @@
 
 import UIKit
 
-class FirstCoordinator: Coordinator {
+class FirstCoordinator: Coordinator{
 
-    weak var viewController: FirstViewController?
-    weak var root: UIViewController?
+    var dependencies: Bool
+    weak var coordinatedViewController: FirstViewController?
+    weak var presentingViewController: UIViewController?
 
-    init(root: UIViewController) {
-        self.root = root
+
+    required init(presentingViewController: UIViewController?, inject: Bool) {
+        self.presentingViewController = presentingViewController
+        self.dependencies = inject
     }
 
     func createViewController() -> FirstViewController? {

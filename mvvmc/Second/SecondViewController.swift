@@ -14,4 +14,12 @@ class SecondViewController: UIViewController {
     override func awakeFromNib() {
         title = "Second"
     }
+
+    @IBAction func tapped() {
+        viewModel.doit()
+    }
+
+    @IBAction func tappedBack() {
+        viewModel.back()
+    }
  }

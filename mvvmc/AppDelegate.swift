@@ -17,7 +17,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
         services = AppServices()
 
-        appCoordinator = AppCoordinator(services: services)
+        appCoordinator = AppCoordinator(presentingViewController: nil, inject: services)
         appCoordinator.show()
 
         return true

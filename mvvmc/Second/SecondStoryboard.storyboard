@@ -21,12 +21,25 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aqe-Ry-gJF">
                                 <rect key="frame" x="161.5" y="318" width="52" height="30"/>
                                 <state key="normal" title="Second"/>
+                                <connections>
+                                    <action selector="tapped" destination="GgI-U2-I32" eventType="touchUpInside" id="l0u-PR-Y7I"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VHI-HU-byD">
+                                <rect key="frame" x="170" y="356" width="34" height="30"/>
+                                <state key="normal" title="Back"/>
+                                <connections>
+                                    <action selector="tappedBack" destination="GgI-U2-I32" eventType="touchUpInside" id="w24-Rx-SN4"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="aqe-Ry-gJF" firstAttribute="centerX" secondItem="OUU-mD-Yc7" secondAttribute="centerX" id="PkE-vl-WIo"/>
+                            <constraint firstItem="aqe-Ry-gJF" firstAttribute="centerX" secondItem="OUU-mD-Yc7" secondAttribute="centerX" id="cCk-do-hxL"/>
+                            <constraint firstItem="VHI-HU-byD" firstAttribute="centerX" secondItem="OUU-mD-Yc7" secondAttribute="centerX" id="lG5-4S-Yf4"/>
                             <constraint firstItem="aqe-Ry-gJF" firstAttribute="centerY" secondItem="OUU-mD-Yc7" secondAttribute="centerY" id="na9-AY-2Ao"/>
+                            <constraint firstItem="VHI-HU-byD" firstAttribute="top" secondItem="aqe-Ry-gJF" secondAttribute="bottom" constant="8" id="oOC-0J-7RK"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="0Q5-Mn-i5l"/>
                     </view>

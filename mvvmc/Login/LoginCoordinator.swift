@@ -13,19 +13,22 @@ protocol LoginCoordinatorDelegate: class {
 
 class LoginCoordinator: Coordinator {
 
-    weak var viewController: LoginViewController?
-    weak var root: UIViewController?
+    var dependencies: Services
+    weak var coordinatedViewController: LoginViewController?
+    weak var presentingViewController: UIViewController?
 
-    let services: Services
+
     weak var delegate: LoginCoordinatorDelegate?
 
-    init(root: UIViewController, services: Services) {
-        self.root = root
-        self.services = services
+    required init(presentingViewController: UIViewController?, inject: Services) {
+        self.presentingViewController = presentingViewController
+        self.dependencies = inject
+
     }
 
+
     func createViewController() -> LoginViewController? {
-        let viewModel = LoginViewModel(coordinator: self, services: services)
+        let viewModel = LoginViewModel(coordinator: self, services: dependencies)
         return LoginViewController(viewModel: viewModel)
     }
 

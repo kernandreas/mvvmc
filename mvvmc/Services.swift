@@ -7,7 +7,7 @@
 
 import Foundation
 
-protocol Services {
+protocol Services: Dependencies {
     var authentification: AuthenticationService { get }
 }
 

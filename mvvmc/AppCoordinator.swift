@@ -9,15 +9,19 @@ import UIKit
 
 class AppCoordinator: Coordinator {
 
-    weak var viewController: UIViewController?
-    weak var root: UIViewController?
+    var dependencies: Services
+    weak var coordinatedViewController: UIViewController?
+    weak var presentingViewController: UIViewController?
 
-    private let services: Services
+    var services: Services { return self.dependencies }
+
     private let window: UIWindow = UIWindow()
 
-    init(services: Services) {
-        self.services = services
+
+    required init(presentingViewController: UIViewController?, inject: Services) {
+        dependencies = inject
     }
+
 
     func createViewController() -> UIViewController? {
         if services.authentification.isLoggedIn {
@@ -29,7 +33,7 @@ class AppCoordinator: Coordinator {
 
     func createLoginViewController() -> UIViewController {
         let navigationController = UINavigationController()
-        let coordinator = LoginCoordinator(root: navigationController, services: services)
+        let coordinator = LoginCoordinator(presentingViewController: navigationController, inject: dependencies)
         coordinator.delegate = self
         coordinator.show()
 
@@ -40,18 +44,17 @@ class AppCoordinator: Coordinator {
         let tabBarController = UITabBarController()
 
         let firstNavigationController = UINavigationController()
-        let firstCoordinator = FirstCoordinator(root: firstNavigationController)
+        let firstCoordinator = FirstCoordinator(presentingViewController: firstNavigationController, inject: true)
+        firstCoordinator.show()
 
         let secondNavigationController = UINavigationController()
-        let secondCoordinator = SecondCoordinator(root: secondNavigationController)
+        let secondCoordinator = SecondCoordinator(presentingViewController: secondNavigationController, inject: services)
+        secondCoordinator.show()
 
         tabBarController.viewControllers = [
             firstNavigationController,
             secondNavigationController
         ]
-
-        firstCoordinator.show()
-        secondCoordinator.show()
 
         return tabBarController
     }

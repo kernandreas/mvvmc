@@ -8,12 +8,12 @@
 import Foundation
 
 class SecondViewModel {
-  
+
+    var showNext: (() -> Void)?
+
     func doit() {
-
+        showNext?()
     }
 
-    func back() {
-
-    }
+    func back() { }
 }

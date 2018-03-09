@@ -9,20 +9,23 @@ import UIKit
 
 class SecondCoordinator: Coordinator {
 
-    let tabBarController: UITabBarController
+    let rootViewController: UIViewController
 
-    init(tabBarController: UITabBarController) {
-        self.tabBarController = tabBarController
+    init(rootViewController: UIViewController) {
+        self.rootViewController = rootViewController
     }
 
     func start() {
         let viewModel = SecondViewModel()
+
+        viewModel.showNext = { [unowned self] in
+            self.coordinate(to: SecondCoordinator(rootViewController: self.rootViewController))
+        }
+
         guard let viewController = UIStoryboard(name: "SecondStoryboard", bundle: nil).instantiateInitialViewController() as? SecondViewController else {
             return
         }
         viewController.viewModel = viewModel
-        let navigationController = UINavigationController(rootViewController: viewController)
-
-        tabBarController.viewControllers = (tabBarController.viewControllers ?? []) + [navigationController]
+        rootViewController.show(viewController, sender: nil)
     }
 }

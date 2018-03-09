@@ -9,17 +9,15 @@ import UIKit
 
 class FirstCoordinator: Coordinator {
 
-    let tabBarController: UITabBarController
+    let rootViewController: UIViewController
 
-    init(tabBarController: UITabBarController) {
-        self.tabBarController = tabBarController
+    init(rootViewController: UIViewController) {
+        self.rootViewController = rootViewController
     }
 
     func start() {
         let viewModel = FirstViewModel()
         let viewController = FirstViewController(viewModel: viewModel)
-        let navigationController = UINavigationController(rootViewController: viewController)
-        
-        tabBarController.viewControllers = (tabBarController.viewControllers ?? []) + [navigationController]
+        rootViewController.show(viewController, sender: nil)
     }
 }

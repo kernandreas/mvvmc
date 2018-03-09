@@ -17,8 +17,19 @@ class MainCoordinator: Coordinator {
 
     func start() {
         let tabBarController = UITabBarController()
-        coordinate(to: FirstCoordinator(tabBarController: tabBarController))
-        coordinate(to: SecondCoordinator(tabBarController: tabBarController))
+
+        let firstNavigationController = UINavigationController()
+        coordinate(to: FirstCoordinator(rootViewController: firstNavigationController))
+
+        let secondNavigationController = UINavigationController()
+        coordinate(to: SecondCoordinator(rootViewController: secondNavigationController))
+
+        tabBarController.viewControllers = [
+            firstNavigationController,
+            secondNavigationController
+        ]
+
         window.rootViewController = tabBarController
+        window.makeKeyAndVisible()
     }
 }

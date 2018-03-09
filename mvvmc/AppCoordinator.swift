@@ -8,5 +8,15 @@
 import UIKit
 
 class AppCoordinator: Coordinator {
-    
+
+    let window: UIWindow
+
+    init(window: UIWindow) {
+        self.window = window
+    }
+
+    override func start() {
+        coordinate(to: MainCoordinator(window: window))
+        window.makeKeyAndVisible()
+    }
 }

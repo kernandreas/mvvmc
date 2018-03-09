@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A3532C4E205337A800CE6860 /* MainCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3532C4D205337A800CE6860 /* MainCoordinator.swift */; };
 		A379B32F202D0442001B5648 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A379B32E202D0442001B5648 /* Coordinator.swift */; };
 		A379B3312030ACAC001B5648 /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A379B3302030ACAC001B5648 /* AppCoordinator.swift */; };
 		A3A5B5D0203305D3002D33D1 /* LoginCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3A5B5CF203305D3002D33D1 /* LoginCoordinator.swift */; };
@@ -44,6 +45,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		A3532C4D205337A800CE6860 /* MainCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCoordinator.swift; sourceTree = "<group>"; };
 		A379B32E202D0442001B5648 /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
 		A379B3302030ACAC001B5648 /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
 		A3A5B5CF203305D3002D33D1 /* LoginCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginCoordinator.swift; sourceTree = "<group>"; };
@@ -141,6 +143,7 @@
 				A3A794D6202CE2F50039FB0B /* AppDelegate.swift */,
 				A379B32E202D0442001B5648 /* Coordinator.swift */,
 				A379B3302030ACAC001B5648 /* AppCoordinator.swift */,
+				A3532C4D205337A800CE6860 /* MainCoordinator.swift */,
 				A3A79504202CE93D0039FB0B /* Login */,
 				A3A5B5D12033415A002D33D1 /* First */,
 				A3A5B5D820337C67002D33D1 /* Second */,
@@ -322,6 +325,7 @@
 				A3A5B5DE20337D35002D33D1 /* SecondViewModel.swift in Sources */,
 				A3A794D7202CE2F50039FB0B /* AppDelegate.swift in Sources */,
 				A379B32F202D0442001B5648 /* Coordinator.swift in Sources */,
+				A3532C4E205337A800CE6860 /* MainCoordinator.swift in Sources */,
 				A3A79508202CE9850039FB0B /* LoginViewModel.swift in Sources */,
 				A3A5B5D0203305D3002D33D1 /* LoginCoordinator.swift in Sources */,
 			);

@@ -7,4 +7,19 @@
 
 import UIKit
 
-class FirstCoordinator: Coordinator {}
+class FirstCoordinator: Coordinator {
+
+    let tabBarController: UITabBarController
+
+    init(tabBarController: UITabBarController) {
+        self.tabBarController = tabBarController
+    }
+
+    override func start() {
+        let viewModel = FirstViewModel()
+        let viewController = FirstViewController(viewModel: viewModel)
+        let navigationController = UINavigationController(rootViewController: viewController)
+        
+        tabBarController.viewControllers = (tabBarController.viewControllers ?? []) + [navigationController]
+    }
+}

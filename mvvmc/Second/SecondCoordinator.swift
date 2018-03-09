@@ -7,4 +7,22 @@
 
 import UIKit
 
-class SecondCoordinator: Coordinator {}
+class SecondCoordinator: Coordinator {
+
+    let tabBarController: UITabBarController
+
+    init(tabBarController: UITabBarController) {
+        self.tabBarController = tabBarController
+    }
+
+    override func start() {
+        let viewModel = SecondViewModel()
+        guard let viewController = UIStoryboard(name: "SecondStoryboard", bundle: nil).instantiateInitialViewController() as? SecondViewController else {
+            return
+        }
+        viewController.viewModel = viewModel
+        let navigationController = UINavigationController(rootViewController: viewController)
+
+        tabBarController.viewControllers = (tabBarController.viewControllers ?? []) + [navigationController]
+    }
+}

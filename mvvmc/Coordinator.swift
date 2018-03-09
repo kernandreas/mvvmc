@@ -22,7 +22,7 @@ class Coordinator {
 
     func coordinate(to coordinator: Coordinator) {
         addChild(coordinator)
-        start()
+        coordinator.start()
     }
 
     func start() {

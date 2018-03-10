@@ -9,17 +9,22 @@ import UIKit
 
 class SecondCoordinator: Coordinator {
 
-    let rootViewController: UIViewController
+    let rootViewController: UINavigationController
 
-    init(rootViewController: UIViewController) {
+    init(rootViewController: UINavigationController) {
         self.rootViewController = rootViewController
     }
 
     func start() {
         let viewModel = SecondViewModel()
 
-        viewModel.showNext = { [unowned self] in
-            self.coordinate(to: SecondCoordinator(rootViewController: self.rootViewController))
+        viewModel.showNext = { [weak self] in
+            guard let strongSelf = self else { return }
+            strongSelf.coordinate(to: SecondCoordinator(rootViewController: strongSelf.rootViewController))
+        }
+
+        viewModel.goBack = { [weak self] in
+            self?.rootViewController.popViewController(animated: true)
         }
 
         guard let viewController = UIStoryboard(name: "SecondStoryboard", bundle: nil).instantiateInitialViewController() as? SecondViewController else {

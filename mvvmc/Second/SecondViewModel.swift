@@ -10,10 +10,13 @@ import Foundation
 class SecondViewModel {
 
     var showNext: (() -> Void)?
+    var goBack: (() -> Void)?
 
     func doit() {
         showNext?()
     }
 
-    func back() { }
+    func back() {
+        goBack?()
+    }
 }

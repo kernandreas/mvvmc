@@ -13,7 +13,7 @@
 		A3A5B5D0203305D3002D33D1 /* LoginCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3A5B5CF203305D3002D33D1 /* LoginCoordinator.swift */; };
 		A3A6A39C205B1693004E7999 /* RegistrationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3A6A39B205B1693004E7999 /* RegistrationViewModel.swift */; };
 		A3A6A39E205B16B1004E7999 /* RegistrationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3A6A39D205B16B1004E7999 /* RegistrationViewController.swift */; };
-		A3A6A3A0205B221E004E7999 /* Observable.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3A6A39F205B221E004E7999 /* Observable.swift */; };
+		A3A6A3A3205B28FA004E7999 /* Observable.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3A6A3A2205B28FA004E7999 /* Observable.swift */; };
 		A3A794D7202CE2F50039FB0B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3A794D6202CE2F50039FB0B /* AppDelegate.swift */; };
 		A3A794DE202CE2F50039FB0B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A3A794DD202CE2F50039FB0B /* Assets.xcassets */; };
 		A3A794E1202CE2F50039FB0B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A3A794DF202CE2F50039FB0B /* LaunchScreen.storyboard */; };
@@ -47,7 +47,7 @@
 		A3A5B5CF203305D3002D33D1 /* LoginCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginCoordinator.swift; sourceTree = "<group>"; };
 		A3A6A39B205B1693004E7999 /* RegistrationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationViewModel.swift; sourceTree = "<group>"; };
 		A3A6A39D205B16B1004E7999 /* RegistrationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationViewController.swift; sourceTree = "<group>"; };
-		A3A6A39F205B221E004E7999 /* Observable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Observable.swift; path = ../../dfl/Bundesliga/Bundesliga/Utils/Observable.swift; sourceTree = "<group>"; };
+		A3A6A3A2205B28FA004E7999 /* Observable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Observable.swift; path = ../../dfl/Bundesliga/Bundesliga/Utils/Observable.swift; sourceTree = "<group>"; };
 		A3A794D3202CE2F50039FB0B /* mvvmc.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = mvvmc.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A3A794D6202CE2F50039FB0B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A3A794DD202CE2F50039FB0B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -133,7 +133,7 @@
 				A379B32E202D0442001B5648 /* Coordinator.swift */,
 				A379B3302030ACAC001B5648 /* AppCoordinator.swift */,
 				A3532C4D205337A800CE6860 /* MainCoordinator.swift */,
-				A3A6A39F205B221E004E7999 /* Observable.swift */,
+				A3A6A3A2205B28FA004E7999 /* Observable.swift */,
 				A3A79504202CE93D0039FB0B /* Login */,
 				A3A794DD202CE2F50039FB0B /* Assets.xcassets */,
 				A3A794DF202CE2F50039FB0B /* LaunchScreen.storyboard */,
@@ -308,7 +308,7 @@
 				A3A79506202CE9640039FB0B /* LoginViewController.swift in Sources */,
 				A3A794D7202CE2F50039FB0B /* AppDelegate.swift in Sources */,
 				A379B32F202D0442001B5648 /* Coordinator.swift in Sources */,
-				A3A6A3A0205B221E004E7999 /* Observable.swift in Sources */,
+				A3A6A3A3205B28FA004E7999 /* Observable.swift in Sources */,
 				A3532C4E205337A800CE6860 /* MainCoordinator.swift in Sources */,
 				A3A79508202CE9850039FB0B /* LoginViewModel.swift in Sources */,
 				A3A5B5D0203305D3002D33D1 /* LoginCoordinator.swift in Sources */,

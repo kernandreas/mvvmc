@@ -9,27 +9,20 @@ import UIKit
 
 class MainCoordinator: Coordinator {
 
-    private let window: UIWindow
-
-    init(window: UIWindow) {
-        self.window = window
-    }
+    let tabBarController = UITabBarController()
 
     func start() {
-        let tabBarController = UITabBarController()
 
-        let firstNavigationController = UINavigationController()
-        coordinate(to: FirstCoordinator(rootViewController: firstNavigationController))
+        // Span other child coordinators instead just init the VCs!!
 
-        let secondNavigationController = UINavigationController()
-        coordinate(to: SecondCoordinator(rootViewController: secondNavigationController))
+        let vc = UIViewController()
+        vc.title = "FIRST"
+        vc.view.backgroundColor = .blue
 
-        tabBarController.viewControllers = [
-            firstNavigationController,
-            secondNavigationController
-        ]
+        let vc2 = UIViewController()
+        vc2.title = "SECOND"
+        vc2.view.backgroundColor = .red
 
-        window.rootViewController = tabBarController
-        window.makeKeyAndVisible()
+        tabBarController.viewControllers = [vc, vc2]
     }
 }

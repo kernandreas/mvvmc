@@ -8,21 +8,15 @@
 import UIKit
 
 class BaseCoordinator {
+    private let uuid = UUID()
+    var childCoordinators = [UUID: Coordinator]()
 
-    private let identifier = UUID()
-    private var childCoordinators = [UUID: Coordinator]()
-
-    private func addChild(_ child: Coordinator) {
-        childCoordinators[child.identifier] = child
+    func addChild(_ child: Coordinator) {
+        childCoordinators[child.uuid] = child
     }
 
-    private func removeChild(_ child: Coordinator) {
-        childCoordinators[child.identifier] = nil
-    }
-
-    func coordinate(to coordinator: Coordinator) {
-        addChild(coordinator)
-        coordinator.start()
+    func removeChild(_ child: Coordinator) {
+        childCoordinators[child.uuid] = nil
     }
 }
 
